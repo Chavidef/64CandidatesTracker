@@ -36,6 +36,16 @@ namespace _64CandidatesTrackerNew.Data
             context.Candidates.FirstOrDefault(c => c.Id == id).RegistrationStatus = status;
             context.SaveChanges();
         }
+        public Counts GetCounts()
+        {
+            using var context = new CandidatesDataContext(_connectionString);
+            return new Counts
+            {
+                Pending = context.Candidates.Where(c => c.RegistrationStatus == RegistrationStatus.pending).Count(),
+                Confirmed = context.Candidates.Where(c => c.RegistrationStatus == RegistrationStatus.confirmed).Count(),
+                Refused = context.Candidates.Where(c => c.RegistrationStatus == RegistrationStatus.refused).Count(),
+            };
+        }
 
 
 

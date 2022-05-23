@@ -49,6 +49,13 @@ namespace _64CandidatesTrackerNew.Web.Controllers
             var repo = new CandidatesRepository(_connectionstring);
             repo.UpdateStatus(vm.id, vm.status);
         }
+        [Route("getcounts")]
+        [HttpGet]
+        public Counts GetCounts()
+        {
+            var repo = new CandidatesRepository(_connectionstring);
+            return repo.GetCounts();
+        }
 
     }
 }

@@ -2,6 +2,7 @@
 import useForm from "../Hooks/useForm";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { useCounts } from '../CountsContext';
 
 
 const AddCandidate = () => {
@@ -9,8 +10,11 @@ const AddCandidate = () => {
     const [formData, setFormData] = useForm({ firstName: '', lastName: '', email: '', phoneNumber: '', notes: '', registrationStatus:'pending' });
     const history = useHistory();
 
+    const { updateCounts } = useCounts();
+
     const onSubmitClick = async () => {
         await axios.post('/api/candidates/addcandidate', formData);
+        updateCounts();
         history.push('/');
     }
 

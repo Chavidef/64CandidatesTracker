@@ -1,7 +1,10 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCounts } from './CountsContext';
 
 const Layout = (props) => {
+
+    const { counts: { pending, confirmed, refused} } = useCounts();
     return (
         <>
             <header>
@@ -21,22 +24,22 @@ const Layout = (props) => {
                                 </li>
                                 <li className="nav-item">
                                     <Link to='/addcandidate' className="nav-link text-light">
-                                        Add Candidate
+                                        Add Candidate 
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to='/pending' className="nav-link text-light">
-                                        Pending
+                                        Pending ({pending})
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to='/viewtable/confirmed' className="nav-link text-light">
-                                        Confirmed
+                                        Confirmed ({confirmed})
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to='/viewtable/refused' className="nav-link text-light">
-                                        Refused
+                                        Refused ({refused})
                                     </Link>
                                 </li>
                             </ul>

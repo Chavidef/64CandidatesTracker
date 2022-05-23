@@ -6,6 +6,7 @@ import AddCandidate from './Pages/AddCandidate';
 import Pending from './Pages/Pending';
 import ViewTable from './Pages/ViewTable';
 import ViewDetails from './Pages/ViewDetails';
+import { CountsContextComponents } from './CountsContext';
 
 
 
@@ -13,13 +14,15 @@ import ViewDetails from './Pages/ViewDetails';
 
 const App = () => {
     return (
-        <Layout>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/addcandidate' component={AddCandidate} />
-            <Route exact path='/pending' component={Pending} />
-            <Route exact path='/viewtable/:status' component={ViewTable} />
-            <Route exact path='/viewcandidatedetails/:id' component={ViewDetails}/>
-        </Layout>
+        <CountsContextComponents>
+            <Layout>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/addcandidate' component={AddCandidate} />
+                <Route exact path='/pending' component={Pending} />
+                <Route exact path='/viewtable/:status' component={ViewTable} />
+                <Route exact path='/viewcandidatedetails/:id' component={ViewDetails} />
+            </Layout>
+        </CountsContextComponents>
     )
 }
 

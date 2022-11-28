@@ -48,21 +48,5 @@ namespace _64CandidatesTrackerNew.Data
         }
 
 
-
-
-
-
-
-        //public List<Post> GetAll(int pgnum)
-        //{
-        //    using var context = new BlogDataContext(_connectionString);
-        //    return context.Posts.OrderByDescending(p => p.Date).Skip(pgnum).Take(3).ToList();
-        //}
-        //public int GetPostCount()
-        //{
-        //    using var context = new BlogDataContext(_connectionString);
-        //    return context.Posts.Count();
-        //}
-
     }
 }

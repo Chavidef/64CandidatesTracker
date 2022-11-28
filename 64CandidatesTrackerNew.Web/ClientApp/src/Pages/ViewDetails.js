@@ -5,7 +5,7 @@ import { useCounts } from '../CountsContext';
 
 
 const ViewDetails = () => {
-    const [candidate, setCandidate] = useState({ id: '', firstName: '', lastName: '', email: '', phoneNumber: '', registrationStatus: '', notes:'' });
+    const [candidate, setCandidate] = useState({ firstName: '', lastName: '', email: '', phoneNumber: '', registrationStatus: '', notes:'' });
 
     const { id } = useParams();
     const history = useHistory();
